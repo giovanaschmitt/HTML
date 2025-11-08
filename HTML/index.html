@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento do Complexo Esportivo da UNIFEBE</title>
+
+    <!--Chamada do código css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Fonte "Irian Sans" -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" rel="stylesheet">
+
+    <!--Ícone do card do navegador-->
+    <link rel="icon" type="image/png" href="assets/img/favicon_io/unifebe.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body class="body-index">
+    <!--Menu-->
+    <header>
+        <!-- menu superior -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="login-icon">
+            <a href="login.html">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <!-- Menu lateral -->
+        <nav id="side-menu" class="side-menu">
+            <a href="#" class="close-btn" onclick="toggleMenu()">&times;</a>
+            <a href="consulta_ambiente.html">Consulta do ambiente</a>
+            <a href="consulta_data.html">Consulta de datas e horários disponíveis</a>
+            <a href="agendar.html">Agendar espaço</a>
+            <a href="cancelar.html">Cancelar espaço</a>
+        </nav>
+        
+        <script src="assets/js/script.js"></script>
+
+    </header>
+
+    <main class="main">
+        <section class="secao">
+            <div class="imagem_index">
+                <img src="assets/img/index/fundo.jpeg" alt="Imagem de fundo">
+            </div>
+
+            <div class="apresentacao">
+                <h1>Agendamentos do<br>espaço físico</h1>
+            </div>
+
+            <div class="bloco1">
+                <div class="titulo.bloco1">
+                    <p>Agendamentos do espaço físico</p>
+                </div>
+                <div class="conteudo.bloco1">
+                    <p>Realizar o agendamento de um espaço esportivo na UNIFEBE significa garantir o acesso a uma infraestrutura de qualidade, projetada para diversas modalidades. O ginásio poliesportivo, com suas demarcações para futsal, basquete e vôlei, está preparado para receber tanto os treinos rotineiros dos estudantes quanto os eventos e competições do calendário acadêmico, oferecendo um ambiente prático e funcional para a comunidade.</p>
+                </div>
+            </div>
+
+            <div class="bloco2">
+                <a href="consulta_ambiente.html">Consulta do ambiente</a>
+                <a href="consulta_data.html">Consulta de datas e horários disponíveis</a>
+                <a href="agendar.html">Agendar espaço</a>
+                <a href="cancelar.html">Cancelar agendamento</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
