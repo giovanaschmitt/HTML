@@ -8,6 +8,10 @@ function toggleMenu() {
     }
 }
 
+/*Login */
+
+
+
 
 /*Consulta_ambiente*/
 // ======== JS DO MODAL DE AGENDAMENTO ========
@@ -80,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return h * 60 + m;
   }
 });
-
 
 
 // ======== MODAL DE AGENDAMENTO + LISTAGEM ========

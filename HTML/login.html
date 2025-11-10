@@ -20,22 +20,25 @@
     
     <main class="main">
         <section class="secao">
-            <div class="titulo">
-                <h1>Sistema de agendamento dos<br>espaços de esporte da<br>UNIFEBE</h1>
+            <div class="titulo_login">
+                <strong>Sistema de agendamento dos<br>espaços de esporte da<br>UNIFEBE</strong>
             </div>
-
-            <div class="login">
-                <div class="identificacao">
-                    <p>Identificação do usuário</p>
+    
+            <form action="/login" method="post" class="login">
+                <div class="campo_matricula">
+                    <label for="matricula">Identificação do usuário</label><br>
+                    <input type="number" class="matricula" name="matricula" placeholder="Digite sua matrícula" required>
                 </div>
-                <div class="senha">
-                    <p>Senha</p>
+                <br>
+                <div class="campo_senha">
+                    <label for="senha">Senha:</label><br>
+                    <input type="password" class="senha" name="senha" placeholder="Digite sua senha" required>
                 </div>
-            </div>
 
-            <div class="botao">
-                <button class="btn-agendar">Agendar</button>
-            </div>
+                <br>
+                <button type="submit" class="btn-acessar">Acessar</button>
+            </form>
+
         </section>
     </main>
 </body>
