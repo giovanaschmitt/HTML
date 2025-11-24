@@ -264,33 +264,48 @@ video {
 
 /*Login*/
 
-.body-login{
-  display: block;
-  align-content: center;
+.body-login {
+    display: block;
+    align-content: center;
 }
+
 .btn-acessar {
-  background-color: #2A4A94;
-  color: white;
-  padding: 10px;
-  padding-left: 70px;
-  padding-right: 70px;
-  border-radius: 10px;
+    background-color: #2A4A94;
+    color: white;
+    margin-left: 125px;
+    padding: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 10px;
 }
 
-.titulo_login{
-  font-size: 50px;
-  color: #2A4A94;
-  text-align: center;
-  margin-top: 5%;
+.titulo_login {
+    font-size: 50px;
+    color: #2A4A94;
+    text-align: center;
+    margin-top: 5%;
 }
-
-
 
 .login {
-  font-size: 20px;
-  text-align: justify;
-  margin-left: 35%;
-  padding-top: 3%;
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 35%;
+    padding-top: 3%;
+}
+
+.matricula,
+.senha {
+    padding: 10px;
+    padding-right: 240px;
+    border: 2px solid #004ea9;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.matricula:focus,
+.senha:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 
@@ -363,99 +378,197 @@ header {
     color: white;
 }
 
+
+/*Index*/
+.secao {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 .imagem_index img {
     width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    filter: brightness(44%);
+    position: relative;
+}
+
+.apresentacao {
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 55px;
+}
+
+.blocos {
+    display: flex;
+    /* coloca lado a lado */
+    justify-content: space-between;
+    /* separa para esquerda e direita */
+    align-items: center;
+    /* alinha verticalmente */
+    width: 100%;
+    padding: 20px 0;
+    background-color: #e5e8ec;
+}
+
+.bloco1,
+.bloco2 {
+    width: 48%;
+    /* cada parte ocupa metade da largura */
+    font-size: 18px;
+    color: #333;
+}
+
+.bloco1 {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: justify;
+    margin: 30px;
+}
+
+.bloco2 {
+    margin-right: 10px;
+}
+
+.titulo_bloco1 {
+    color: #2A4A94;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.bloco3 {
+    background-color: #2A4A94;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    margin-bottom: 20px;
+    /* espaço entre as frases */
+    display: block;
+}
+
+/*Consulta_ambiente*/
+
+.apresentacao_consulta {
+    position: absolute;
+    top: 33%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 55px;
 }
 
 
-/*Index*/
 
-
-/*Consulta_ambiente*/
 /* ======== ESTILO DO MODAL E INPUTS ======== */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.45);
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal.show {
-  display: flex;
+    display: flex;
 }
 
 .modal-content {
-  background: #fff;
-  width: 100%;
-  max-width: 420px;
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal-content h3 {
-  margin: 0 0 12px 0;
-  text-align: center;
+    margin: 0 0 12px 0;
+    text-align: center;
 }
 
 .close-btn {
-  position: absolute;
-  right: 14px;
-  top: 10px;
-  font-size: 22px;
-  cursor: pointer;
-  color: #333;
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
 }
 
 .modal-content label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-  color: #333;
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #333;
 }
 
 .modal-content select,
 .modal-content input[type="date"],
 .modal-content input[type="time"] {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 6px;
-  border-radius: 6px;
-  border: 1px solid #cfcfcf;
-  font-size: 15px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #cfcfcf;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
 .btn-agendar {
-  display: inline-block;
-  width: 100%;
-  margin-top: 16px;
-  padding: 10px;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
+    display: inline-block;
+    width: 40%;
+    margin-top: 40px;
+    padding: 10px;
+    margin-left: 450px;
+    background: #2A4A94;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.btn-agendar:hover { background: #43a047; }
+.btn-agendar2 {
+    background-color: #2A4A94;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    color: #f9f9f9;
+}
+
+.btn-agendar:hover {
+    background: #2A4A94;
+}
 
 /* pequenas melhorias responsivas */
 @media (max-width:420px) {
-  .modal-content { padding: 14px; }
-  .close-btn { right: 10px; top: 8px; }
+    .modal-content {
+        padding: 14px;
+    }
+
+    .close-btn {
+        right: 10px;
+        top: 8px;
+    }
 }
 
 
@@ -463,52 +576,55 @@ header {
 
 /* ======== LISTAGEM DE AGENDAMENTOS ======== */
 .listagem-agendamentos {
-  margin: 30px auto;
-  max-width: 700px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
+    margin: 30px auto;
+    max-width: 700px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .listagem-agendamentos h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .filtro-data {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .filtro-data label {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .filtro-data input {
-  padding: 5px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-table th, table td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
+table th,
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
 table th {
-  background-color: #f4f4f4;
+    background-color: #f4f4f4;
 }
 
 table tr:hover {
-  background-color: #f9f9f9;
+    background-color: #f9f9f9;
 }
+
+

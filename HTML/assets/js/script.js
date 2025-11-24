@@ -196,3 +196,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // inicializa tabela ao abrir
   atualizarTabela();
 });
+
