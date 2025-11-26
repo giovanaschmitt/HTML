@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,9 @@
     <!--Fonte "Irian Sans" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
     <!--Ícone do card do navegador-->
     <link rel="icon" type="image/png" href="assets/img/favicon_io/unifebe.png">
@@ -37,8 +40,13 @@
             <a href="agendar.html">Agendar espaço</a>
             <a href="meus_agendamentos.html">Meus agendamentos</a>
             <a href="cancelar.html">Cancelar espaço</a>
+
+            <!-- Abas SOMENTE de admin -->
+            <a id="abaAdmin1" href="todos_agendamentos.html">Todos os agendamentos</a>
+            <a id="abaAdmin2" href="editar_ambiente.html">Editar os ambientes</a>
+            <a id="abaAdmin3" href="bloquear_data.html">Bloquear data</a>
         </nav>
-        
+
         <script src="assets/js/script.js"></script>
 
     </header>
@@ -48,11 +56,69 @@
             <div class="imagem_index">
                 <img src="assets/img/index/fundo.jpg" alt="Imagem de fundo">
             </div>
-        
+
             <div class="apresentacao_consulta">
                 <h1>Meus agendamentos</h1>
             </div>
+            <table id="tabelaMeusAgendamentos">
+                <thead>
+                    <tr>
+                        <th>Espaço</th>
+                        <th>Data</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="text-align:center;">Carregando...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            const tabela = document.querySelector("#tabelaMeusAgendamentos tbody");
+
+            const matriculaLogado = sessionStorage.getItem("matriculaUsuario");
+
+            if (!matriculaLogado) {
+                tabela.innerHTML = `<tr><td colspan="4">Erro: nenhum usuário logado.</td></tr>`;
+                return;
+            }
+
+            const agendamentos = JSON.parse(localStorage.getItem("agendamentos") || "[]");
+
+            const meus = agendamentos.filter(a => a.matricula === matriculaLogado);
+
+            tabela.innerHTML = "";
+
+            if (meus.length === 0) {
+                tabela.innerHTML = `<tr><td colspan="4">Você ainda não fez nenhum agendamento.</td></tr>`;
+                return;
+            }
+
+            meus.forEach(a => {
+                const dataFormatada = new Date(a.data).toLocaleDateString("pt-BR");
+                tabela.innerHTML += `
+            <tr>
+                <td>${a.tipo}</td>
+                <td>${dataFormatada}</td>
+                <td>${a.inicio}</td>
+                <td>${a.fim}</td>
+            </tr>
+        `;
+            });
+        });
+    </script>
+
 
     </main>
 </body>
+
 </html>

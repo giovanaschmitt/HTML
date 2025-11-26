@@ -9,8 +9,56 @@ function toggleMenu() {
 }
 
 /*Login */
+if (document.getElementById("abaAdmin1")) {
+    let tipoUsuario = sessionStorage.getItem("tipoUsuario");
+    if (tipoUsuario !== "admin") {
+        document.getElementById("abaAdmin1").style.display = "none";
+        document.getElementById("abaAdmin2").style.display = "none";
+        document.getElementById("abaAdmin3").style.display = "none";
+    }
+}
 
 
+
+/*USUÁRIO TESTE */
+const usuarios = [
+  { matricula: "2024100737", senha: "1234", tipo: "comum" },
+  { matricula: "2025112501", senha: "admin", tipo: "admin" }
+];
+
+function loginHandler(event) {
+  event.preventDefault();
+  console.log("loginHandler chamado");
+
+  const matricula = document.getElementById("matricula").value.trim();
+  const senha = document.getElementById("senha").value;
+
+  console.log("dados digitados:", matricula, senha);
+
+  const user = usuarios.find(
+    u => u.matricula === matricula && u.senha === senha
+  );
+
+  if (!user) {
+    alert("Matrícula ou senha incorretas!");
+    return;
+  }
+
+  sessionStorage.setItem("tipoUsuario", user.tipo);
+  console.log("login ok → redirecionando…");
+
+  window.location.href = "index.html";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM carregado, adicionando listener...");
+  document
+    .getElementById("form-login")
+    .addEventListener("submit", loginHandler);
+});
+
+
+sessionStorage.setItem("matriculaUsuario", user.matricula);
 
 
 /*Consulta_ambiente*/
@@ -142,7 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // cria objeto do agendamento
-    const novo = { tipo, data, inicio, fim };
+    const novo = { 
+    tipo, 
+    data, 
+    inicio, 
+    fim, 
+    matricula: sessionStorage.getItem("matriculaUsuario")
+};
 
     // salva no localStorage
     const agendamentos = getAgendamentos();
@@ -197,3 +251,4 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarTabela();
 });
 
+matricula: sessionStorage.getItem("matriculaUsuario")

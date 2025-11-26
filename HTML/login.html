@@ -23,22 +23,43 @@
             <div class="titulo_login">
                 <strong>Sistema de agendamento dos<br>espaços de esporte da<br>UNIFEBE</strong>
             </div>
-    
-            <form action="/login" method="post" class="login">
+        
+            <form id="form-login" class="login">
                 <div class="campo_matricula">
                     <label for="matricula">Identificação do usuário</label><br>
-                    <input type="text" class="matricula" name="matricula" placeholder="Digite sua matrícula" required>
+                    <input class="matricula" type="text" id="matricula" placeholder="Digite sua matrícula" required>
                 </div>
-                <br>
+        <br>
                 <div class="campo_senha">
                     <label for="senha">Senha:</label><br>
-                    <input type="password" class="senha" name="senha" placeholder="Digite sua senha" required>
+                    <input class="senha" type="password" id="senha" placeholder="Digite sua senha" required>
                 </div>
-
                 <br>
-                <button type="submit" class="btn-acessar">Acessar</button>
+                <button class="btn-acessar" type="submit">Entrar</button>
             </form>
+        
+            <!-- script no fim; ajuste o caminho conforme sua pasta -->
+            <script src="assets/js/script.js" defer></script>
+        
 
+           <!-- <form class="login" onsubmit="login(event)">
+                <div class="campo_matricula">
+                    <label for="matricula">Identificação do usuário</label><br>
+                    <input class="matricula" type="text" id="matricula" placeholder="Digite sua matrícula">
+                </div>
+        
+                <br>
+        
+                <div class="campo_senha">
+                    <label for="senha">Senha:</label><br>
+                    <input class="senha" type="password" id="senha" placeholder="Digite sua senha">
+                </div>
+        
+                <br>
+        
+                <button class="btn-acessar" type="submit">Entrar</button>
+            </form>
+        -->
         </section>
     </main>
 </body>
