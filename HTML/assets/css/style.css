@@ -628,3 +628,209 @@ table tr:hover {
 }
 
 
+/*CANCELAR AGENDAMENTO*/
+.btn-cancelar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover {
+    background-color: #b52b27;
+}
+
+
+/*TODOS OS AGENDAMENTOS - ADMIN*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background: #2c3e50;
+    color: white;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+#msg {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+body-todos-agendamentos {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.secao-admin {
+    width: 95%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/*EDITAR AMBIENTES*/
+.admin-section {
+    margin: 20px;
+}
+
+.add-ambiente-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-ambiente-container input {
+    padding: 7px;
+    width: 250px;
+}
+
+.add-ambiente-container button {
+    padding: 7px 15px;
+    cursor: pointer;
+}
+
+.tabela-ambientes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-ambientes th,
+.tabela-ambientes td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.btnExcluir {
+    background: #c62828;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btnExcluir:hover {
+    background: #a91e1e;
+}
+
+
+/*BLOQUEAR DATA*/
+/* ================================
+   BLOQUEAR CALENDÁRIO (ADMIN)
+================================ */
+
+#formBloqueio {
+    margin-left: 590px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+}
+
+#formBloqueio label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#formBloqueio input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+#formBloqueio button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #2A4A94;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#formBloqueio button:hover {
+    background: #2A4A94;
+}
+
+#tabelaBloqueios {
+    margin-left:5%;
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabelaBloqueios th,
+#tabelaBloqueios td {
+    padding: 12px;
+    border-bottom: 1px solid #2A4A94;
+    text-align: center;
+    font-size: 15px;
+}
+
+#tabelaBloqueios th {
+    background-color: #a1a1aa;
+    font-weight: bold;
+}
+
+#tabelaBloqueios tr:hover {
+    background: #f0f8ff;
+}
+
+.btn-delete {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.btn-delete:hover {
+    background: #b52b27;
+}

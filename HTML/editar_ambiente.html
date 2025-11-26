@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento do Complexo Esportivo da UNIFEBE</title>
+
+    <!--Chamada do código css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Fonte "Irian Sans" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--Ícone do card do navegador-->
+    <link rel="icon" type="image/png" href="assets/img/favicon_io/unifebe.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body class="body-editar">
+    <!--Menu-->
+    <header>
+        <!-- menu superior -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="login-icon">
+            <a href="login.html">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <!-- Menu lateral -->
+        <nav id="side-menu" class="side-menu">
+            <a href="#" class="close-btn" onclick="toggleMenu()">&times;</a>
+            <a href="index.html">Início</a>
+            <a href="agendar.html">Agendar espaço</a>
+            <a href="meus_agendamentos.html">Meus agendamentos</a>
+            <a href="cancelar.html">Cancelar espaço</a>
+
+            <!-- Abas SOMENTE de admin -->
+            <a id="abaAdmin1" href="todos_agendamentos.html">Todos os agendamentos</a>
+            <a id="abaAdmin2" href="editar_ambiente.html">Editar os ambientes</a>
+            <a id="abaAdmin3" href="bloquear_data.html">Bloquear data</a>
+        </nav>
+
+        <script src="assets/js/script.js"></script>
+
+    </header>
+
+    <main class="main">
+        <section class="secao">
+            <div class="imagem_index">
+                <img src="assets/img/index/fundo.jpg" alt="Imagem de fundo">
+            </div>
+
+            <div class="apresentacao_consulta">
+                <h1>Editar ambientes</h1>
+            </div>
+            
+            <div id="abaAdminAmbientes" class="admin-section">
+                <h2>Editar Ambientes</h2>
+
+                <!-- Formulário para adicionar -->
+                <div class="add-ambiente-container">
+                    <input type="text" id="novoAmbiente" placeholder="Nome do ambiente">
+                    <button id="btnAdicionarAmbiente">Adicionar</button>
+                </div>
+
+                <!-- Lista de ambientes -->
+                <table class="tabela-ambientes">
+                    <thead>
+                        <tr>
+                            <th>Ambiente</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaAmbientes"></tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

@@ -45,7 +45,7 @@
             <a id="abaAdmin3" href="bloquear_data.html">Bloquear data</a>
         </nav>
 
-        <script src="assets/js/script.js"></script>
+
 
     </header>
 
@@ -58,9 +58,99 @@
             <div class="apresentacao_consulta">
                 <h1>Cancelar agendamento</h1>
             </div>
-            
+            <table id="tabelaCancelar">
+                <thead>
+                    <tr>
+                        <th>Espaço</th>
+                        <th>Data</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align:center;">Carregando...</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        // === FUNÇÃO PARA PEGAR AGENDAMENTOS ===
+        function getAgendamentos() {
+            return JSON.parse(localStorage.getItem("agendamentos") || "[]");
+        }
+
+        // === FUNÇÃO PARA SALVAR ===
+        function salvarAgendamentos(lista) {
+            localStorage.setItem("agendamentos", JSON.stringify(lista));
+        }
+
+        // === CARREGAR TABELA ===
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabela = document.querySelector("#tabelaCancelar tbody");
+            const matricula = sessionStorage.getItem("matriculaUsuario");
+
+            function carregarTabela() {
+                const agendamentos = getAgendamentos().filter(a => a.matricula === matricula);
+
+                tabela.innerHTML = "";
+
+                if (agendamentos.length === 0) {
+                    tabela.innerHTML = `<tr><td colspan="5" style="text-align:center;">Nenhum agendamento para cancelar.</td></tr>`;
+                    return;
+                }
+
+                agendamentos.forEach((a, index) => {
+                    const dataFormatada = new Date(a.data).toLocaleDateString('pt-BR');
+
+                    const linha = document.createElement("tr");
+                    linha.innerHTML = `
+                <td>${a.tipo}</td>
+                <td>${dataFormatada}</td>
+                <td>${a.inicio}</td>
+                <td>${a.fim}</td>
+                <td><button class="btn-cancelar" data-index="${index}">Cancelar</button></td>
+            `;
+                    tabela.appendChild(linha);
+                });
+            }
+
+            // === EVENTO DE CANCELAMENTO ===
+            document.addEventListener("click", (e) => {
+                if (e.target.classList.contains("btn-cancelar")) {
+                    const index = e.target.getAttribute("data-index");
+
+                    const todos = getAgendamentos();
+                    const listaDoUsuario = todos.filter(a => a.matricula === matricula);
+
+                    const agendamentoRemovido = listaDoUsuario[index];
+
+                    if (!confirm(`Deseja cancelar o agendamento de ${agendamentoRemovido.tipo} às ${agendamentoRemovido.inicio}?`)) {
+                        return;
+                    }
+
+                    // remove apenas do usuário
+                    listaDoUsuario.splice(index, 1);
+
+                    // recria lista completa
+                    const novaLista = todos.filter(a => a.matricula !== matricula).concat(listaDoUsuario);
+
+                    salvarAgendamentos(novaLista);
+
+                    carregarTabela();
+                }
+            });
+
+            carregarTabela();
+        });
+
+    </script>
+
+
 </body>
 
 </html>
